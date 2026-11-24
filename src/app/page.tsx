@@ -1,15 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Sparkles, Gift, ShieldCheck, Truck, Scissors, MessageCircle, Star, Heart } from 'lucide-react';
+import { ArrowRight, Sparkles, Gift, ShieldCheck, Truck, Scissors, MessageCircle, Star, Heart, Rotate3d } from 'lucide-react';
 import { PRODUCTS } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
+import GarmentAnatomy3D from '@/components/GarmentAnatomy3D';
 
 export default function HomePage() {
   const featuredProducts = PRODUCTS.filter((p) => p.featured).slice(0, 4);
 
   return (
-    <div className="space-y-24 sm:space-y-32 pb-24 overflow-hidden">
+    <div className="space-y-20 sm:space-y-28 pb-24 overflow-hidden">
       
       {/* ============================================================== */}
       {/* 1. HERO SECTION                                                */}
@@ -46,7 +47,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Welcome to <span className="font-semibold text-zinc-900 dark:text-zinc-100">M Muzamil</span> — where rich South Punjab craftsmanship converges with contemporary silhouettes. From ultra-soft Pima cotton tees to festive handloom kurtas, dressed for distinction.
+              Welcome to <span className="font-semibold text-zinc-900 dark:text-zinc-100">M Muzamil</span> — where rich South Punjab craftsmanship converges with contemporary silhouettes. From ultra-soft Pima cotton tees to festive handloom kurtas and bespoke suits.
             </p>
 
             {/* CTAs */}
@@ -63,13 +64,13 @@ export default function HomePage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <Link
-                href="/gift"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-white dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700 text-sm font-bold shadow-md hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 group"
+              <a
+                href="#anatomy"
+                className="w-full sm:w-auto px-8 py-4 rounded-full bg-zinc-900 text-amber-300 border border-amber-500/30 text-sm font-bold shadow-md hover:bg-zinc-800 transition-all flex items-center justify-center gap-2 group"
               >
-                <Gift className="w-4 h-4 text-primary group-hover:rotate-12 transition-transform" />
-                <span>Send a Private Gift</span>
-              </Link>
+                <Rotate3d className="w-4 h-4 text-amber-400 group-hover:rotate-45 transition-transform" />
+                <span>3D Anatomy of Suit</span>
+              </a>
             </div>
 
             {/* Micro Highlights */}
@@ -133,7 +134,14 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* 2. BRAND PILLARS                                              */}
+      {/* 2. THE SIGNATURE 3D ANATOMY OF A SUIT (CENTERPIECE SHOWCASE)  */}
+      {/* ============================================================== */}
+      <div id="anatomy">
+        <GarmentAnatomy3D />
+      </div>
+
+      {/* ============================================================== */}
+      {/* 3. BRAND PILLARS                                              */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
@@ -178,7 +186,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* 3. FEATURED CLOTHING COLLECTION                                */}
+      {/* 4. FEATURED CLOTHING COLLECTION                                */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
@@ -209,12 +217,11 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* 4. SIGNATURE FEATURE SHOWCASE: PRIVATE GIFTING                */}
+      {/* 5. SIGNATURE FEATURE SHOWCASE: PRIVATE GIFTING                */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-white border border-zinc-800 p-8 sm:p-14 shadow-2xl">
           
-          {/* Subtle Ambient Backlight */}
           <div
             className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-30"
             style={{ backgroundColor: 'var(--primary)' }}
@@ -235,27 +242,6 @@ export default function HomePage() {
               <p className="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
                 Surprise your friend, spouse, or partner with premium M Muzamil wear. Write a deeply personal message that is AES-256 encrypted on our servers. A bespoke QR code card is printed and tucked inside their gift parcel. When they scan it and enter their PIN, your secret message reveals itself in an animated card.
               </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-800 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">
-                    1
-                  </div>
-                  <div className="text-xs text-zinc-300">
-                    <span className="font-bold block text-white">Encrypted at Checkout</span>
-                    Never readable by couriers or store staff.
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-zinc-800 text-amber-400 flex items-center justify-center font-bold text-xs shrink-0">
-                    2
-                  </div>
-                  <div className="text-xs text-zinc-300">
-                    <span className="font-bold block text-white">Optional Self-Destruct</span>
-                    Message erases forever after first reveal.
-                  </div>
-                </div>
-              </div>
 
               <div className="pt-4 flex flex-wrap gap-4">
                 <Link
@@ -295,7 +281,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* 5. BRAND STORY TEASER                                         */}
+      {/* 6. BRAND STORY TEASER                                         */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -321,9 +307,6 @@ export default function HomePage() {
             <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Muzaffargarh, situated between the Chenab and Indus rivers, has long been a cradle of cotton cultivation and bespoke tailoring. M Muzamil was founded with one clear ambition: to bring uncompromising fabric quality, modern fits, and personalized attention back to menswear.
             </p>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              We inspect every yard of cotton, stitch with German thread, and tailor each garment with pride.
-            </p>
 
             <div className="pt-2">
               <Link
@@ -340,7 +323,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================== */}
-      {/* 6. WHATSAPP CONCIERGE BANNER                                  */}
+      {/* 7. WHATSAPP CONCIERGE BANNER                                  */}
       {/* ============================================================== */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
