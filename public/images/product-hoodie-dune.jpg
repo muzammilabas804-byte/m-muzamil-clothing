@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="grad-producthoodiedunejpg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#grad-producthoodiedunejpg)"/>
+  <rect width="800" height="1000" fill="url(#grid)"/>
+
+  <!-- Luxury Borders -->
+  <rect x="30" y="30" width="740" height="940" fill="none" stroke="#fbbf24" stroke-opacity="0.3" stroke-width="1.5"/>
+  <rect x="42" y="42" width="716" height="916" fill="none" stroke="#fbbf24" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Corner Ornaments -->
+  <path d="M 30 60 L 60 30 M 740 30 L 770 60 M 30 940 L 60 970 M 770 940 L 740 970" stroke="#fbbf24" stroke-width="2"/>
+
+  <!-- Header Category -->
+  <text x="400" y="110" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="18" letter-spacing="8" fill="#fbbf24" font-weight="600">
+    WINTER STREETWEAR
+  </text>
+  <line x1="280" y1="130" x2="520" y2="130" stroke="#fbbf24" stroke-opacity="0.5" stroke-width="1"/>
+
+  <!-- Center Icon Graphic -->
+  <g transform="translate(260, 240) scale(1.0)">
+    <circle cx="140" cy="270" r="160" fill="#fbbf24" fill-opacity="0.05" stroke="#fbbf24" stroke-opacity="0.15" stroke-width="2"/>
+    <circle cx="140" cy="270" r="120" fill="none" stroke="#fbbf24" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="6 6"/>
+    <path d="M140 130 C120 100 160 100 140 130 M150 140 L250 200 L220 250 L190 230 L190 420 L90 420 L90 230 L60 250 L30 200 L130 140" fill="none" stroke="#fbbf24" stroke-width="8"/><path d="M110 320 L170 320 L180 370 L100 370 Z" fill="none" stroke="#fbbf24" stroke-width="4"/>
+  </g>
+
+  <!-- Product Title & Info -->
+  <text x="400" y="720" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="32" letter-spacing="3" fill="#ffffff" font-weight="700">
+    DESERT DUNE PULLOVER
+  </text>
+
+  <text x="400" y="765" text-anchor="middle" font-family="'Inter', sans-serif" font-size="16" letter-spacing="4" fill="#fbbf24" font-weight="500">
+    380 GSM BRUSHED FLEECE (REPLACE WITH YOUR PHOTO)
+  </text>
+
+  <!-- Replace Hint Badge -->
+  <rect x="180" y="820" width="440" height="46" rx="6" fill="rgba(255,255,255,0.06)" stroke="#fbbf24" stroke-width="1"/>
+  <text x="400" y="850" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" letter-spacing="2" fill="#e2e8f0" font-weight="500">
+    UPLOAD REPLACEMENT TO /public/images/product-hoodie-dune.jpg
+  </text>
+
+  <!-- Brand Signature Footer -->
+  <text x="400" y="920" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="15" letter-spacing="5" fill="rgba(255,255,255,0.4)">
+    M MUZAMIL • MUZAFFARGARH, PAKISTAN
+  </text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <linearGradient id="grad-workshopcuttingjpg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="1000" fill="url(#grad-workshopcuttingjpg)"/>
+  <rect width="800" height="1000" fill="url(#grid)"/>
+
+  <!-- Luxury Borders -->
+  <rect x="30" y="30" width="740" height="940" fill="none" stroke="#f59e0b" stroke-opacity="0.3" stroke-width="1.5"/>
+  <rect x="42" y="42" width="716" height="916" fill="none" stroke="#f59e0b" stroke-opacity="0.15" stroke-width="1"/>
+
+  <!-- Corner Ornaments -->
+  <path d="M 30 60 L 60 30 M 740 30 L 770 60 M 30 940 L 60 970 M 770 940 L 740 970" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- Header Category -->
+  <text x="400" y="110" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="18" letter-spacing="8" fill="#f59e0b" font-weight="600">
+    THE CRAFTSMANSHIP
+  </text>
+  <line x1="280" y1="130" x2="520" y2="130" stroke="#f59e0b" stroke-opacity="0.5" stroke-width="1"/>
+
+  <!-- Center Icon Graphic -->
+  <g transform="translate(260, 240) scale(1.0)">
+    <circle cx="140" cy="270" r="160" fill="#f59e0b" fill-opacity="0.05" stroke="#f59e0b" stroke-opacity="0.15" stroke-width="2"/>
+    <circle cx="140" cy="270" r="120" fill="none" stroke="#f59e0b" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="6 6"/>
+    <rect x="70" y="150" width="140" height="180" rx="12" fill="none" stroke="#f59e0b" stroke-width="8"/><line x1="90" y1="200" x2="190" y2="200" stroke="#f59e0b" stroke-width="4"/><line x1="90" y1="240" x2="190" y2="240" stroke="#f59e0b" stroke-width="4"/><line x1="90" y1="280" x2="150" y2="280" stroke="#f59e0b" stroke-width="4"/>
+  </g>
+
+  <!-- Product Title & Info -->
+  <text x="400" y="720" text-anchor="middle" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="32" letter-spacing="3" fill="#ffffff" font-weight="700">
+    PRECISION PATTERN CUTTING
+  </text>
+
+  <text x="400" y="765" text-anchor="middle" font-family="'Inter', sans-serif" font-size="16" letter-spacing="4" fill="#f59e0b" font-weight="500">
+    MUZAFFARGARH ATELIER (REPLACE WITH YOUR PHOTO)
+  </text>
+
+  <!-- Replace Hint Badge -->
+  <rect x="180" y="820" width="440" height="46" rx="6" fill="rgba(255,255,255,0.06)" stroke="#f59e0b" stroke-width="1"/>
+  <text x="400" y="850" text-anchor="middle" font-family="'Inter', sans-serif" font-size="13" letter-spacing="2" fill="#e2e8f0" font-weight="500">
+    UPLOAD REPLACEMENT TO /public/images/workshop-cutting.jpg
+  </text>
+
+  <!-- Brand Signature Footer -->
+  <text x="400" y="920" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="15" letter-spacing="5" fill="rgba(255,255,255,0.4)">
+    M MUZAMIL • MUZAFFARGARH, PAKISTAN
+  </text>
+</svg>
