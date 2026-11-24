@@ -1,7 +1,62 @@
 import { ColorTheme } from '@/types';
 
 // Predefined clothing-inspired color themes for M Muzamil
+// New default: Regal Imperial Maroon & Champagne Gold
 export const THEME_PRESETS: ColorTheme[] = [
+  {
+    id: 'maroon',
+    name: 'Imperial Maroon & Gold',
+    garmentName: 'Imperial Velvet Kurta',
+    primary: '#701a31',
+    primaryHover: '#581224',
+    primaryLight: '#fff1f2',
+    primaryDark: '#3f0714',
+    accent: '#d97706',
+    bgMain: '#faf9f6',
+    bgSurface: '#ffffff',
+    bgCard: '#ffffff',
+    borderColor: '#fecdd3',
+    textMain: '#1c1917',
+    textMuted: '#78716c',
+    textContrast: '#ffffff',
+    isDark: false,
+  },
+  {
+    id: 'obsidian',
+    name: 'Obsidian Noir & Gold',
+    garmentName: 'Obsidian Bespoke Tuxedo',
+    primary: '#18181b',
+    primaryHover: '#27272a',
+    primaryLight: '#f4f4f5',
+    primaryDark: '#09090b',
+    accent: '#eab308',
+    bgMain: '#fafafa',
+    bgSurface: '#ffffff',
+    bgCard: '#ffffff',
+    borderColor: '#e4e4e7',
+    textMain: '#09090b',
+    textMuted: '#71717a',
+    textContrast: '#ffffff',
+    isDark: false,
+  },
+  {
+    id: 'sapphire',
+    name: 'Midnight Sapphire',
+    garmentName: 'Sapphire Oxford Shirt',
+    primary: '#1e3a8a',
+    primaryHover: '#172554',
+    primaryLight: '#eff6ff',
+    primaryDark: '#0f172a',
+    accent: '#f59e0b',
+    bgMain: '#f8fafc',
+    bgSurface: '#ffffff',
+    bgCard: '#ffffff',
+    borderColor: '#bfdbfe',
+    textMain: '#0f172a',
+    textMuted: '#64748b',
+    textContrast: '#ffffff',
+    isDark: false,
+  },
   {
     id: 'emerald',
     name: 'Royal Emerald',
@@ -14,25 +69,7 @@ export const THEME_PRESETS: ColorTheme[] = [
     bgMain: '#fbfcfb',
     bgSurface: '#ffffff',
     bgCard: '#ffffff',
-    borderColor: '#e2e8f0',
-    textMain: '#0f172a',
-    textMuted: '#64748b',
-    textContrast: '#ffffff',
-    isDark: false,
-  },
-  {
-    id: 'sapphire',
-    name: 'Midnight Sapphire',
-    garmentName: 'Sapphire Oxford Shirt',
-    primary: '#1d4ed8',
-    primaryHover: '#1e40af',
-    primaryLight: '#eff6ff',
-    primaryDark: '#172554',
-    accent: '#f59e0b',
-    bgMain: '#f8fafc',
-    bgSurface: '#ffffff',
-    bgCard: '#ffffff',
-    borderColor: '#e2e8f0',
+    borderColor: '#a7f3d0',
     textMain: '#0f172a',
     textMuted: '#64748b',
     textContrast: '#ffffff',
@@ -58,7 +95,7 @@ export const THEME_PRESETS: ColorTheme[] = [
   },
   {
     id: 'amethyst',
-    name: 'Royal Plum',
+    name: 'Royal Amethyst',
     garmentName: 'Amethyst Velvet Kurti',
     primary: '#7e22ce',
     primaryHover: '#6b21a8',
@@ -89,42 +126,6 @@ export const THEME_PRESETS: ColorTheme[] = [
     borderColor: '#fde68a',
     textMain: '#1c1917',
     textMuted: '#78716c',
-    textContrast: '#ffffff',
-    isDark: false,
-  },
-  {
-    id: 'obsidian',
-    name: 'Obsidian Midnight',
-    garmentName: 'Obsidian Tailored Blazer',
-    primary: '#09090b',
-    primaryHover: '#18181b',
-    primaryLight: '#27272a',
-    primaryDark: '#000000',
-    accent: '#eab308',
-    bgMain: '#09090b',
-    bgSurface: '#121215',
-    bgCard: '#18181b',
-    borderColor: '#27272a',
-    textMain: '#f4f4f5',
-    textMuted: '#a1a1aa',
-    textContrast: '#ffffff',
-    isDark: true,
-  },
-  {
-    id: 'crimson',
-    name: 'Burgundy Crimson',
-    garmentName: 'Crimson Festive Kurta',
-    primary: '#991b1b',
-    primaryHover: '#7f1d1d',
-    primaryLight: '#fef2f2',
-    primaryDark: '#450a0a',
-    accent: '#eab308',
-    bgMain: '#fefcfc',
-    bgSurface: '#ffffff',
-    bgCard: '#ffffff',
-    borderColor: '#fee2e2',
-    textMain: '#18181b',
-    textMuted: '#71717a',
     textContrast: '#ffffff',
     isDark: false,
   },
@@ -192,29 +193,6 @@ export function generateThemeFromHex(hex: string): ColorTheme {
   const primaryLight = adjustColorBrightness(hex, 80);
   const primaryDark = adjustColorBrightness(hex, -40);
   const textContrast = getContrastTextColor(hex);
-  
-  // Complementary accent (180deg hue shift)
-  const cleanHex = hex.replace('#', '');
-  const r = (parseInt(cleanHex.substring(0, 2), 16) || 0) / 255;
-  const g = (parseInt(cleanHex.substring(2, 4), 16) || 0) / 255;
-  const b = (parseInt(cleanHex.substring(4, 6), 16) || 0) / 255;
-  
-  const max = Math.max(r, g, b), min = Math.min(r, g, b);
-  let h = 0;
-  const s = max === min ? 0 : (max - min) / (1 - Math.abs(max + min - 1));
-  const l = (max + min) / 2;
-
-  if (max !== min) {
-    if (max === r) h = ((g - b) / (max - min)) % 6;
-    else if (max === g) h = (b - r) / (max - min) + 2;
-    else h = (r - g) / (max - min) + 4;
-    h = Math.round(h * 60);
-    if (h < 0) h += 360;
-  }
-
-  // Complementary hue
-  const compHue = (h + 180) % 360;
-  // Approximate complementary hex
   const accent = adjustColorBrightness(primary, 25);
 
   return {
@@ -226,7 +204,7 @@ export function generateThemeFromHex(hex: string): ColorTheme {
     primaryLight,
     primaryDark,
     accent,
-    bgMain: '#ffffff',
+    bgMain: '#faf9f6',
     bgSurface: '#ffffff',
     bgCard: '#ffffff',
     borderColor: '#e2e8f0',

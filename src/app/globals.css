@@ -3,30 +3,30 @@
 @tailwind utilities;
 
 :root {
-  /* Dynamic CSS Theme Variables (overridden dynamically by ThemeDial) */
-  --primary: #047857;
-  --primary-hover: #065f46;
-  --primary-light: #ecfdf5;
-  --primary-dark: #022c22;
-  --primary-rgb: 4, 120, 87;
+  /* New Regal Imperial Maroon & Warm Gold Color Scheme */
+  --primary: #701a31;
+  --primary-hover: #581224;
+  --primary-light: #fff1f2;
+  --primary-dark: #3f0714;
+  --primary-rgb: 112, 26, 49;
   --accent: #d97706;
   --accent-rgb: 217, 119, 6;
-  --bg-main: #fbfcfb;
+  --bg-main: #faf9f6;
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
-  --border-color: #e2e8f0;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
+  --border-color: #fecdd3;
+  --text-main: #1c1917;
+  --text-muted: #78716c;
   --text-contrast: #ffffff;
 }
 
 .dark {
-  --bg-main: #09090b;
-  --bg-surface: #121215;
-  --bg-card: #18181b;
-  --border-color: #27272a;
-  --text-main: #f4f4f5;
-  --text-muted: #a1a1aa;
+  --bg-main: #0c0a09;
+  --bg-surface: #18181b;
+  --bg-card: #1c1917;
+  --border-color: #292524;
+  --text-main: #f5f5f4;
+  --text-muted: #a8a29e;
 }
 
 * {
@@ -64,7 +64,7 @@ h1, h2, h3, .font-luxury {
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 9999px;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 ::-webkit-scrollbar-thumb:hover {
