@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Gift, MessageCircle, Sparkles, ShoppingBag, ShieldCheck } from 'lucide-react';
+import { Menu, X, Gift, MessageCircle, Sparkles, ShoppingBag, ShieldCheck, Lock } from 'lucide-react';
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -99,6 +99,16 @@ export default function Navbar() {
 
           {/* Right Action Buttons */}
           <div className="flex items-center gap-2 sm:gap-3">
+            {/* Admin Portal Link */}
+            <Link
+              href="/admin"
+              className="p-2 rounded-full text-zinc-500 hover:text-primary hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              title="Admin Portal"
+              aria-label="Admin Portal"
+            >
+              <Lock className="w-4 h-4" />
+            </Link>
+
             {/* Direct WhatsApp Call to Action */}
             <a
               href="https://wa.me/923055177531?text=Assalam-o-Alaikum%20M%20Muzamil!%20I%20am%20visiting%20your%20website%20and%20would%20like%20to%20inquire%20about%20your%20clothing%20collection."
@@ -175,6 +185,13 @@ export default function Navbar() {
                   <MessageCircle className="w-4 h-4 fill-current" />
                   <span>Chat on WhatsApp (0305 5177531)</span>
                 </a>
+                <Link
+                  href="/admin"
+                  className="flex items-center justify-center gap-1.5 py-2 text-xs text-zinc-400 hover:text-zinc-200 transition-colors"
+                >
+                  <Lock className="w-3.5 h-3.5" />
+                  <span>Admin Portal</span>
+                </Link>
                 <div className="text-center text-[11px] text-zinc-500">
                   Muzaffargarh, Punjab, Pakistan
                 </div>
